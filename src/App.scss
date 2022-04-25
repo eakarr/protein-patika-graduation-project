@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import "/src/styles/variables.scss";
+
+:root {
+  font-size: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  color: $text-color1;
+}

@@ -1,0 +1,114 @@
+@import "../../styles/variables.scss";
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: $login-bg;
+  position: relative;
+}
+
+.sign-up {
+  padding: 7rem 9rem;
+  background-color: $white;
+  width: 57rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.3rem 1.2rem #1e36480a;
+}
+
+.logo {
+  margin-bottom: 5.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 3.2rem;
+  text-align: center;
+  font-weight: 700;
+  color: $text-color1;
+  line-height: 4.3rem;
+}
+
+.note {
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.toLogin {
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  color: $blue;
+  font-weight: 700;
+}
+
+#signup-button {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+#signup-email-error {
+  color: $red;
+  background-color: $light-red;
+  border-color: $red;
+}
+
+#signup-password-error {
+  color: $red;
+  background-color: $light-red;
+  border-color: $red;
+}
+
+//media queries
+@media screen and (max-width: 1335px) {
+  #signup-logo {
+    width: 20rem;
+  }
+  #signup-image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  :root {
+    font-size: 10px;
+  }
+  .logo {
+    margin-bottom: 0;
+  }
+  #signup-logo {
+    width: 15rem;
+    height: 5rem;
+    margin-bottom: 2.4rem;
+  }
+  .sign-up {
+    width: 35.5rem;
+    padding: 2rem;
+  }
+  .toLogin {
+    padding-bottom: 2rem;
+  }
+  .right-side {
+    background-color: $home-bg;
+  }
+}
