@@ -1,46 +1,62 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import api from "../../services/api";
+import errorToastify from "../../helpers/errorToastify";
 
 import "./SignUp.scss";
 import mannequin from "../../assets/signUp.png";
 import ikinciElLogo from "../../assets/logo.svg";
-import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
-
-  // useEffect(() => {
-
-  // }, [])
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  
-  const onSubmit = (data) => console.log(data);
 
-  useEffect(() => {
+  /* Create new user */
+  const postSignUp = async (email, password) => {
+    await api
+      .post("/auth/local/register", {
+        username: email,
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("AccessToken", response.data.jwt);
+        localStorage.setItem("email", response.data.user.email);
+        window.location.href = "/"; /* Navigates to the Home page */
+      })
+      .catch((err) => {
+        if (err.response.status === 400) {
+          errorToastify("Bu kullanıcı zaten sistemde kayıtlı!");
+        }
+      });
+  };
+
+  const formSubmitHandler = () => {
     if (errors.email || errors.password) {
-      setError(true);
+      return;
     }
-  }, [errors]);
+    postSignUp(email, password);
+  };
 
   return (
     <>
       <div className="main-container">
-        <img src={mannequin} alt="signupimage" id="signup-image" />
+        <img src={mannequin} alt="Mannequin" id="signup-image" />
         <div className="right-side">
           <div className="logo">
-            <img src={ikinciElLogo} alt="signuplogo" id="signup-logo" />
+            <img src={ikinciElLogo} alt="İkinci El Project" id="signup-logo" />
           </div>
           <div className="sign-up">
             <p className="title">Üye Ol</p>
             <p className="note">Fırsatlardan yararlanmak için üye ol!</p>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(formSubmitHandler)}>
               <label>Email</label>
               {/* Email validations */}
               <input
