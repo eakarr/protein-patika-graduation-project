@@ -11,7 +11,7 @@ import UploadProduct from "../pages/UploadProduct/UploadProduct";
 const Router = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
-    if (localStorage.getItem("AccessToken")) {
+    if (localStorage.getItem("AccessToken") && localStorage.getItem("email")) {
       setIsLoggedIn(true);
     }
   }, []);
