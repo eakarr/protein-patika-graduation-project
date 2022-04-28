@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie'
 import api from "../../services/api";
 import errorToastify from "../../helpers/errorToastify";
 
@@ -18,8 +19,8 @@ const Login = () => {
   } = useForm();
   const navigate = useNavigate();
 
-  const getToken = localStorage.getItem("AccessToken");
-  const getEmail = localStorage.getItem("email");
+  const getToken = Cookies.get("AccessToken");
+  const getEmail = Cookies.get("email");
 
   /* Login */
   const postLogin = async (email, password) => {
@@ -30,8 +31,8 @@ const Login = () => {
       })
       .then((response) => {
         console.log(response);
-        localStorage.setItem("AccessToken", response.data.jwt);
-        localStorage.setItem("email", response.data.user.email);
+        Cookies.set("AccessToken", response.data.jwt);
+        Cookies.set("email", response.data.user.email);
         navigate("/", { replace: true }); /* Navigates to the Home page */
       })
       .catch((err) => {

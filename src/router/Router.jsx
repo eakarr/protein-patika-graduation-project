@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import Cookies from 'js-cookie'
 
 import Account from "../pages/Account/Account";
 import Home from "../pages/Home/Home";
@@ -11,7 +12,7 @@ import UploadProduct from "../pages/UploadProduct/UploadProduct";
 const Router = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
-    if (localStorage.getItem("AccessToken") && localStorage.getItem("email")) {
+    if (Cookies.get("AccessToken") && Cookies.get("email")) {
       setIsLoggedIn(true);
     }
   }, []);
