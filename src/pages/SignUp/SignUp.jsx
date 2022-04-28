@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import errorToastify from "../../helpers/errorToastify";
 
@@ -16,6 +16,17 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
+
+  const getToken = localStorage.getItem("AccessToken");
+  const getEmail = localStorage.getItem("email");
+
+  const formSubmitHandler = () => {
+    if (errors.email || errors.password) {
+      return;
+    }
+    postSignUp(email, password);
+  };
 
   /* Create new user */
   const postSignUp = async (email, password) => {
@@ -29,7 +40,7 @@ const SignUp = () => {
         console.log(response);
         localStorage.setItem("AccessToken", response.data.jwt);
         localStorage.setItem("email", response.data.user.email);
-        window.location.href = "/"; /* Navigates to the Home page */
+        navigate("/", { replace: true }); /* Navigates to the Home page */
       })
       .catch((err) => {
         if (err.response.status === 400) {
@@ -38,12 +49,12 @@ const SignUp = () => {
       });
   };
 
-  const formSubmitHandler = () => {
-    if (errors.email || errors.password) {
-      return;
+  /* Prevents user from going back to sign up page */
+  useEffect(() => {
+    if (getToken && getEmail) {
+      navigate("/", { replace: true });
     }
-    postSignUp(email, password);
-  };
+  }, [getToken,getEmail,navigate]);
 
   return (
     <>
