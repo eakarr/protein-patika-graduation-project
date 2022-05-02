@@ -86,22 +86,6 @@ label {
   border-color: $red;
 }
 
-// Error toast
-.Toastify__toast {
-  border-radius: 0.8rem !important;
-  background: $light-red !important;
-  box-shadow: 0 0.3rem 1.2rem #1e36482e !important;
-  .Toastify__toast-body {
-    div {
-      color: $red !important;
-      font-size: 1.6rem !important;
-    }
-  }
-}
-
-.Toastify__close-button {
-  display: none;
-}
 
 // Media queries
 @media screen and (max-width: 1335px) {
