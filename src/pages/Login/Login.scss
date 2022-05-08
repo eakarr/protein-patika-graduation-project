@@ -26,6 +26,7 @@
 
 .logo {
   margin-bottom: 5.5rem;
+  cursor: pointer;
 }
 
 form {
@@ -52,7 +53,7 @@ label {
   margin-top: 1.5rem;
 }
 
-.toLogin {
+.toSignup {
   text-align: center;
 }
 
@@ -109,11 +110,11 @@ label {
     height: 5rem;
     margin-bottom: 2.4rem;
   }
-  .sign-up {
+  .login {
     width: 35.5rem;
     padding: 2rem;
   }
-  .toLogin {
+  .toSignup {
     padding-bottom: 2rem;
   }
   .right-side {
