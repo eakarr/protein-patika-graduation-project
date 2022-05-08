@@ -7,7 +7,7 @@
 
 It's full featured e-commerce app built as Patika & Protein React Bootcamp final project.
 
-Live demo available here: (https://protein-patika-graduation-project.vercel.app/)
+Live Vercel version available here: (https://protein-patika-graduation-project.vercel.app/)
 
 ## Content
 
@@ -22,7 +22,7 @@ Live demo available here: (https://protein-patika-graduation-project.vercel.app/
 
 # Introduction
 
-- İkinci El Project is an E-Commerce app that allows users create, buy and sell products. If you already have an account you can sign-in. Else, you can register easily. You can offer products you want and product owner can accept or reject your offered price. The app developed for both web and mobile. All pages have responsive UI.
+İkinci El Project is an E-Commerce app that allows users create, buy and sell products. If you already have an account you can sign-in. Else, you can register easily. You can offer products you want and product owner can accept or reject your offered price. The app developed for both web and mobile. All pages have responsive UI.
 
 <br>
 
@@ -80,28 +80,28 @@ npm run test
 
 <center>
 
-## Web - Sign Up Page
+## Desktop - Sign Up Page
 
-![Web - Sign Up Page](previews/Sign-up.png)
+![Desktop - Sign Up Page](previews/Sign-up.png)
 
-## Web - Home Page
+## Desktop - Home Page
 
-![Web - Home Page](previews/Home-page.png)
+![Desktop - Home Page](previews/Home-page.png)
 
-## Web - Product Detail Page
+## Desktop - Product Detail Page
 
-![Web - Account Page](previews/Product-details-page-offer-modal.png)
-![Web - Account Page 2](previews/Product-details-page-offered-product.png)
-![Web - Account Page 2](previews/Product-details-page-bought-product.png)
+![Desktop - Account Page](previews/Product-details-page-offer-modal.png)
+![Desktop - Account Page 2](previews/Product-details-page-offered-product.png)
+![Desktop - Account Page 3](previews/Product-details-page-bought-product.png)
 
-## Web - Account Page
+## Desktop - Account Page
 
-![Web - Account Page](previews/Account-page-received-offers.png)
-![Web - Account Page-2](previews/Account-page-given-offers-status.png)
+![Desktop - Account Page](previews/Account-page-received-offers.png)
+![Desktop - Account Page-2](previews/Account-page-given-offers-status.png)
 
-## Web - Add Product Page
+## Desktop - Add Product Page
 
-![Web-Add-Product-Page.jpg](previews/Product-upload-page.png)
+![Desktop-Add-Product-Page.jpg](previews/Product-upload-page.png)
 
 ## Mobile
 
@@ -124,7 +124,7 @@ npm run test
 ## Desktop
 
 <p align="center">
-  <img src="previews/Lighthouse-desktop-report.png" alt="mobile-prew" width="600"/>
+  <img src="previews/Lighthouse-desktop-report.png" alt="desk-prew" width="600"/>
 </p>
 
 ## Mobile
