@@ -1,0 +1,88 @@
+@import "../../styles/variables.scss";
+.categories {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3rem;
+  border-bottom: 0.2rem solid $categories-border;
+  border-collapse: collapse;
+}
+.categories-item {
+  color: $text-color1;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  padding-bottom: 1.6rem;
+  cursor: pointer;
+  bottom: -0.2rem;
+    position: relative;
+
+  &:focus {
+    color: $blue;
+    border-bottom: 0.2rem solid $blue;
+    
+  }
+}
+
+// Error toast
+.Toastify__toast {
+  border-radius: 0.8rem !important;
+  background: $light-red !important;
+  box-shadow: 0 0.3rem 1.2rem #1e36482e !important;
+  .Toastify__toast-body {
+    div {
+      color: $red !important;
+      font-size: 1.6rem !important;
+    }
+  }
+}
+
+.Toastify__close-button {
+  display: none;
+}
+
+
+// Media queries
+@media screen and (max-width: 1535px) {
+  .categories-item {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .categories-item {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .categories-item {
+    font-size: 1.3rem;
+    margin-right: 2.7rem;
+    padding-bottom: 0.7rem;
+    &:focus{
+      border:none;
+    }
+  }
+  .categories{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 375px) {
+  .categories {
+    overflow: hidden;
+    overflow-x: scroll;
+    width: 35.5rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  .categories-item {
+    margin-right: 2.7rem;
+    padding-bottom: 0.7rem;
+  }
+}
