@@ -1,0 +1,96 @@
+@import "../../styles/variables.scss";
+
+.header {
+  height: 8rem;
+  background-color: $white;
+}
+
+.navbar {
+  margin: 0 22rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header-logo {
+  height: 4.2rem;
+  img {
+    height: 4.2rem;
+    width: 12.8rem;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+.user {
+  display: flex;
+  position: relative;
+}
+
+#header-product-add-button {
+  font-size: 1.5rem;
+  width: 12.5rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
+
+#header-account-button {
+  font-size: 1.5rem;
+  width: 12.5rem;
+  height: 4rem;
+}
+
+#header-login-button{
+  font-size: 1.5rem;
+  width: 12.5rem;
+  height: 4rem;
+}
+
+// Media queries
+
+@media screen and (max-width: 1535px) {
+  .navbar {
+    margin: 0 16rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .navbar {
+    margin: 0 10rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .navbar {
+    margin: 0 4rem;
+  }
+  #header-product-add-button {
+    visibility: hidden;
+    width: 1rem;
+    &::after {
+      content: url("../../assets/plus-icon.svg");
+      visibility: visible;
+      background-color: #f0f8ff;
+      padding: 0.8rem 1rem;
+      border-radius: 0.8rem;
+      position: absolute;
+      margin-right: 1rem;
+      top: 0;
+      right: 12.5rem;
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  .header {
+    height: 6rem;
+  }
+  .navbar {
+    margin: 0 1rem;
+  }
+  .header-logo {
+    height: 3.2rem;
+    img {
+      width: 10rem;
+      height: 3.2rem;
+    }
+  }
+}

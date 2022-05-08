@@ -1,0 +1,151 @@
+@import "../../styles/variables.scss";
+
+.product-box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  background-color: $white;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+.image {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+    max-height: 30rem;
+    object-fit: cover;
+  }
+}
+.top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.6rem;
+}
+.product-title {
+  color: $blue;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+#product-color {
+  p {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    color: $text-color2;
+    span {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $text-color2;
+    }
+  }
+}
+.product-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $text-color2;
+}
+// Loading spin
+.loading {
+  $colors: #cee8ff, #81baeb, #5ea2dd, #4682b4, #325f8b;
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+
+  .dot {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.8rem;
+    border-radius: 50%;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      animation: wave 2s ease-out infinite;
+    }
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        background: nth($colors, $i);
+
+        &::before {
+          animation-delay: $i * 0.2s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes wave {
+  50%,
+  75% {
+    transform: scale(2.5);
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
+// Media queries
+@media screen and (max-width: 1535px) {
+  .product-box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .product-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 900px) {
+  .product-box {
+    grid-template-columns: repeat((2, 1fr));
+  }
+}
+@media screen and (max-width: 375px) {
+  .product-box {
+    grid-gap: 0.9rem;
+    margin-top: 2rem;
+  }
+  .product-card {
+    width: 17.3rem;
+    height: 26.6rem;
+    padding: 0.6rem;
+  }
+  .top-info {
+    display: block;
+    justify-content: left;
+    margin-bottom: 1.2rem;
+  }
+  #product-color {
+    p {
+      font-size: 1rem;
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+  .product-price {
+    font-size: 1.5rem;
+  }
+  .image {
+    img {
+      max-height: 18.4rem;
+    }
+  }
+}

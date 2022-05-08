@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+.offers-tab {
+  margin: 0 22rem;
+  background-color: $white;
+  border-radius: 0.8rem;
+}
+.react-tabs__tab-list {
+  background-color: $white;
+  border-radius: 0.8rem 0.8rem 0 0;
+  border-bottom: 0.1rem solid $home-bg;
+}
+.react-tabs__tab {
+  background-color: $white;
+  margin: 2rem 0 0 3rem;
+  border: none;
+  padding: 0 0 0.65rem 0;
+  font-weight: 700;
+  color: $small-text;
+  &:focus {
+    box-shadow: inherit;
+    &:after {
+      position: inherit;
+    }
+  }
+}
+.react-tabs__tab--selected {
+  background-color: $white;
+  border: none;
+  color: $blue;
+  border-bottom: 0.1rem solid $blue;
+}
+// Media queries
+@media screen and (max-width: 1535px) {
+  .offers-tab {
+    margin: 0 16rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .offers-tab {
+    margin: 0 10rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .offers-tab {
+    margin: 0 4rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .offers-tab {
+    margin: 0 1rem;
+  }
+}
