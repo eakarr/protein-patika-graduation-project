@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+<p align="center">
+<img src="./src/assets/logo.svg" alt="İkinci El Project" width="300"/>
+  <br/>
+<img src="previews/protein-logo.svg" alt="protein-logo" width="90"/>
+<img src="previews/patika-logo.png" alt="patika-logo" width="90"/>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It's full featured e-commerce app built as Patika & Protein React Bootcamp final project.
 
-## Available Scripts
+Live demo available here: [ <b> Live Demo</b> ]
 
-In the project directory, you can run:
+## Content
 
-### `npm start`
+- [Introduction](#introduction)
+- [Used Technologies](#used-technologies)
+- [Libraries](#libraries)
+- [Installation](#installation)
+- [Previews](#previews)
+- [App Performance](#app-performance)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Introduction
 
-### `npm test`
+- İkinci El Project is an E-Commerce app that allows users create, buy and sell products.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- If you already have an account you can sign-in. Else, you can register easily.
+- You can offer products you want and product owner can accept or reject your offered price.
+- The app developed for both web and mobile. All pages have responsive UI.
 
-### `npm run build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Used Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- HTML
+- JavaScript
+- ReactJS
+- SASS
+- Axios
+- Vercel
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+## Libraries
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- React-Router
+- React-Modals
+- React-Dropzone
+- React-Hook-Form
+- React-Tabs
+- React-Toastify
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- First, clone the project:
 
-## Learn More
+```sh
+git clone https://github.com/eakarr/protein-patika-graduation-project.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Then, start the project on localhost:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# install dependencies with npm
+npm install
 
-### Code Splitting
+# serve at localhost:3000
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- To start unit testing:
 
-### Analyzing the Bundle Size
+```bash
+# with npm
+npm run test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br>
+<br>
 
-### Making a Progressive Web App
+# Previews
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<center>
 
-### Advanced Configuration
+## Web - Sign Up Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Web - Sign Up Page](previews/Sign-up.png)
 
-### Deployment
+## Web - Home Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![Web - Home Page](previews/Home-page.png)
 
-### `npm run build` fails to minify
+## Web - Product Detail Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Web - Account Page](previews/Product-details-page-offer-modal.png)
+![Web - Account Page 2](previews/Product-details-page-offered-product.png)
+![Web - Account Page 2](previews/Product-details-page-bought-product.png)
+
+## Web - Account Page
+
+![Web - Account Page](previews/Account-page-received-offers.png)
+![Web - Account Page-2](previews/Account-page-given-offers-status.png)
+
+## Web - Add Product Page
+
+![Web-Add-Product-Page.jpg](previews/Product-upload-page.png)
+
+## Mobile
+
+<p align="center">
+<img src="previews/mobile-previews/Login-page-mobile-preview.png" alt="mobile-prew" width="215" height="690"/>
+<img src="previews/mobile-previews/Home-page-mobile-preview.png" alt="mobile-prew" width="215" height="690"/>
+<img src="previews/mobile-previews/Product-details-page-offer-modal-mobile-preview.png" alt="mobile-prew" width="215" height="690"/>
+<img src="previews/mobile-previews/Product-details-page-offered-mobile-preview.png" alt="mobile-prew" width="215" height="690"/>
+<img src="previews/mobile-previews/Account-received-offers-mobile-preview.png" alt="mobile-prew" width="215" height="690"/>
+<img src="previews/mobile-previews/Account-page-given-offers-mobile-preview.png" alt="mobile-prew" width="215" height="690"/>
+<img src="previews/mobile-previews/Product-upload-mobile-preview.png" alt="mobile-prew" width="215" height="690"/>
+</p>
+</center>
+
+<br>
+<br>
+
+# App Performance
+
+## Desktop
+
+<p align="center">
+  <img src="previews/Lighthouse-desktop-report.png" alt="mobile-prew" width="600"/>
+</p>
+
+## Mobile
+
+<p align="center">
+  <img src="previews/Lighthouse-mobile-report.png" alt="mobile-prew" width="600"/>
+</p>
