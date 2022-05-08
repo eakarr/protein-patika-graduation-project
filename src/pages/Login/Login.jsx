@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 import api from "../../services/api";
 import errorToastify from "../../helpers/errorToastify";
 
@@ -22,7 +22,7 @@ const Login = () => {
   const getToken = Cookies.get("AccessToken");
   const getEmail = Cookies.get("email");
 
-  /* Login */
+  /* Login request */
   const postLogin = async (email, password) => {
     await api
       .post("/auth/local", {
@@ -53,21 +53,32 @@ const Login = () => {
   useEffect(() => {
     if (getToken && getEmail) {
       navigate("/", { replace: true }); /* Navigates to the Home page */
+      navigate(0);
     }
-  }, [getToken,getEmail,navigate]);
+  }, [getToken, getEmail, navigate]);
+
+  const emailInputHandler = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const passwordInputHandler = (event) => {
+    setPassword(event.target.value);
+  };
 
   return (
     <>
       <div className="main-container">
         <img src={mannequin} alt="Mannequin" id="login-image" />
         <div className="right-side">
-          <div className="logo">
+          <Link to="/" className="logo">
             <img src={ikinciElLogo} alt="İkinci El Project" id="login-logo" />
-          </div>
+          </Link>
           <div className="login">
             <p className="title">Giriş Yap</p>
             <p className="note">Fırsatlardan yararlanmak için giriş yap!</p>
             <form onSubmit={handleSubmit(formSubmitHandler)}>
+
+              {/* Email validations */}
               <label>Email</label>
               <input
                 type="text"
@@ -78,10 +89,10 @@ const Login = () => {
                   required: true,
                   pattern: /\S+@\S+\.\S+/,
                 })}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                onChange={emailInputHandler}
               />
+
+              {/* Password validations */}
               <label>Şifre</label>
               <input
                 type="password"
@@ -93,16 +104,16 @@ const Login = () => {
                   minLength: 8,
                   maxLength: 20,
                 })}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
+                onChange={passwordInputHandler}
               />
+              
               <p className="forgot-password">Şifremi Unuttum</p>
               <button className="button" id="login-button">
                 Giriş Yap
               </button>
             </form>
-            <div className="toLogin">
+
+            <div className="toSignup">
               <p>
                 Hesabın yok mu?{" "}
                 <Link className="link" to="/signup">
