@@ -7,7 +7,7 @@
 
 It's full featured e-commerce app built as Patika & Protein React Bootcamp final project.
 
-Live demo available here: [ <b> Live Demo</b> ]
+Live demo available here: (https://protein-patika-graduation-project.vercel.app/)
 
 ## Content
 
@@ -22,11 +22,7 @@ Live demo available here: [ <b> Live Demo</b> ]
 
 # Introduction
 
-- İkinci El Project is an E-Commerce app that allows users create, buy and sell products.
-
-- If you already have an account you can sign-in. Else, you can register easily.
-- You can offer products you want and product owner can accept or reject your offered price.
-- The app developed for both web and mobile. All pages have responsive UI.
+- İkinci El Project is an E-Commerce app that allows users create, buy and sell products. If you already have an account you can sign-in. Else, you can register easily. You can offer products you want and product owner can accept or reject your offered price. The app developed for both web and mobile. All pages have responsive UI.
 
 <br>
 
