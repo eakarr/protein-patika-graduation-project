@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 import api from "../../services/api";
 import errorToastify from "../../helpers/errorToastify";
 
@@ -21,13 +21,6 @@ const SignUp = () => {
 
   const getToken = Cookies.get("AccessToken");
   const getEmail = Cookies.get("email");
-
-  const formSubmitHandler = () => {
-    if (errors.email || errors.password) {
-      return;
-    }
-    postSignUp(email, password);
-  };
 
   /* Create new user */
   const postSignUp = async (email, password) => {
@@ -50,27 +43,43 @@ const SignUp = () => {
       });
   };
 
+  const formSubmitHandler = () => {
+    if (errors.email || errors.password) {
+      return;
+    }
+    postSignUp(email, password);
+  };
+
   /* Prevents user from going back to sign up page */
   useEffect(() => {
     if (getToken && getEmail) {
       navigate("/", { replace: true });
+      navigate(0);
     }
-  }, [getToken,getEmail,navigate]);
+  }, [getToken, getEmail, navigate]);
+
+  const emailInputHandler = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const passwordInputHandler = (event) => {
+    setPassword(event.target.value);
+  };
 
   return (
     <>
       <div className="main-container">
         <img src={mannequin} alt="Mannequin" id="signup-image" />
         <div className="right-side">
-          <div className="logo">
+          <Link to="/" className="logo">
             <img src={ikinciElLogo} alt="İkinci El Project" id="signup-logo" />
-          </div>
+          </Link>
           <div className="sign-up">
-            <p className="title">Üye Ol</p>
+            <h1 className="title">Üye Ol</h1>
             <p className="note">Fırsatlardan yararlanmak için üye ol!</p>
             <form onSubmit={handleSubmit(formSubmitHandler)}>
-              <label>Email</label>
               {/* Email validations */}
+              <label>Email</label>
               <input
                 type="text"
                 className="input"
@@ -80,12 +89,16 @@ const SignUp = () => {
                   required: true,
                   pattern: /\S+@\S+\.\S+/,
                 })}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                onChange={emailInputHandler}
+                value={email}
               />
-              <label>Şifre</label>
+              {errors.email && (
+                <p style={{ color: "#f77474" }}>
+                  {"Lütfen geçerli eposta adresini giriniz!"}
+                </p>
+              )}
               {/* Password validations */}
+              <label>Şifre</label>
               <input
                 type="password"
                 id={errors.password && "signup-password-error"}
@@ -96,14 +109,19 @@ const SignUp = () => {
                   minLength: 8,
                   maxLength: 20,
                 })}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
+                onChange={passwordInputHandler}
+                value={password}
               />
+              {errors.password && (
+                <p style={{ color: "#f77474" }}>
+                  {"Şifre minimum 8, maksimum 20 karakter içermelidir!"}
+                </p>
+              )}
               <button className="button" id="signup-button">
                 Üye Ol
               </button>
             </form>
+
             <div className="toLogin">
               <p>
                 Hesabın var mı?{" "}
